@@ -78,52 +78,6 @@ void setup() {
     return;
   }
 
-  /*err = i2s_setpin();
-  if (err != ESP_OK) {
-    Serial.printf("Failed to set I2S pins: %d\n", err);
-    return;
-  }
-
-  err = i2s_start(I2S_PORT);
-  if (err != ESP_OK) {
-    Serial.printf("Failed to start I2S: %d\n", err);
-    return;
-  }
-
-  // Configure web server routes
-  server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
-    request->send(200, "text/html", index_html);
-  });
-
-  server.on("/recording.wav", HTTP_GET, [](AsyncWebServerRequest *request) {
-    request->send(LittleFS, "/recording.wav", "audio/wav", true);
-  });
-
-  server.on("/status", HTTP_GET, [](AsyncWebServerRequest *request) {
-    String json = "{\"isRecording\":" + String(isRecording ? "true" : "false");
-    json += ",\"filename\":\"" + String(isRecording ? "recording in progress" : "recording.wav") + "\"}";
-    request->send(200, "application/json", json);
-  });
-
-  server.on("/start-recording", HTTP_GET, [](AsyncWebServerRequest *request) {
-    if (!isRecording) {
-      startRecording();
-      request->send(200, "application/json", "{\"success\":true}");
-    } else {
-      request->send(200, "application/json", "{\"success\":false,\"error\":\"Already recording\"}");
-    }
-  });
-
-  server.on("/stop-recording", HTTP_GET, [](AsyncWebServerRequest *request) {
-    if (isRecording) {
-      stopRecording();
-      request->send(200, "application/json", "{\"success\":true}");
-    } else {
-      request->send(200, "application/json", "{\"success\":false,\"error\":\"Not recording\"}");
-    }
-  });
-
-  server.begin();*/
 }
 
 void startRecording() {
